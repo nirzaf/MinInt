@@ -1,32 +1,53 @@
-﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Hello, World!");
+﻿var randoms = new List<object>();
 
-var randoms = new List<object>()
-    {23, "33", "ttt", 3.5, 2.0, 0, "-100", new object(), ...}
-{"ttt", new object();
-}
+object ob1 = new();
+ob1 = 23;
+
+object ob2 = new();
+ob2 = "33";
+
+object ob3 = new();
+ob3 = "ttt";
+
+object ob4 = new();
+ob4 = 3.5;
+
+object ob5 = new();
+ob5 = 12;
+
+//randoms.Add(ob1);
+randoms.Add(ob2);
+randoms.Add(ob3);
+randoms.Add(ob4);
+randoms.Add(ob5);
+
+Console.Write(Util.MinValue(randoms));
 
 
 public static class Util
 {
-    public string MinValue(List<object> valObj)
+    public static string MinValue(List<object> valObj)
     {
         List<object> newObj = new List<object>();
-        for (int i = 0; i < valObj.Count; i++)
+        var message = "Sorry No Valid Integer Found in the List";
+
+        foreach (var obj in valObj)
         {
-            //Sort all 
-            if (int.TryParse(valObj[i].ToString(), out int ValidInt))
+            if (obj is int)
             {
-                newObj.Add(valObj[i]);
+                newObj.Add(obj);
             }
-
-            //sort list of newObj
-
-
-
-            //get first index sorted list
-
-            return 
         }
+
+        //Sort list of newObj in ascending order
+        newObj.Sort();
+
+        //get first index sorted list
+
+        if (newObj.Count > 0)
+        {
+            message = newObj[0].ToString();
+        }
+        return message;
     }
 }
