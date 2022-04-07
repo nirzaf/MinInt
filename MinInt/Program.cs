@@ -43,7 +43,6 @@ public static class Util
         newObj.Sort();
 
         //get first index sorted list
-
         if (newObj.Count > 0)
         {
             message = newObj[0].ToString();
