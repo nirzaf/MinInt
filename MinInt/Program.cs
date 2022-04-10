@@ -26,7 +26,7 @@ Console.Write(Util.MinValue(randoms));
 
 public static class Util
 {
-    public static string MinValue(List<object> valObj)
+    public static string? MinValue(List<object> valObj)
     {
         List<object> newObj = new List<object>();
         var message = "Sorry No Valid Integer Found in the List";
