@@ -28,7 +28,10 @@ public static class Util
 {
     public static string? MinValue(List<object> valObj)
     {
-        List<object> newObj = new List<object>();
+        var newObj = new List<object>
+        {
+            Capacity = 0
+        };
         var message = "Sorry No Valid Integer Found in the List";
 
         foreach (var obj in valObj)
